@@ -4,6 +4,14 @@ main {
   min-height: 80vh;
 } 
 
+h3 {
+  padding: 1rem 0;
+}
+
 .product-title {
   font-size: .89rem !important;
+}
+
+.rating span {
+  margin: 0.1rem;
 }
