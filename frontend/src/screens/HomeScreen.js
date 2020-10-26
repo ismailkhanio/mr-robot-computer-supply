@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
-// products is dummy store data from the product.js file (array of object data)
-import products from '../products'
+import axios from 'axios'
 
 const HomeScreen = () => {
+  // these two variables are defined that can use state. One for the initial state itself (product), and the other for when the state changes (setProducts).
+  // useState() and useEffect() are both React Hooks that take out the use of class components
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await axios.get('/api/products')
+
+      setProducts(res.data)
+    }
+
+    fetchProducts()
+  }, [])
+
+  // useEffect(() => {
+  //   console.log('hello')
+  // })
+
   return (
     <>
       <h1>Latest Products</h1>
