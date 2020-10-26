@@ -1,4 +1,3 @@
-// this is the common js syntax, there is more updated ES6 module that will be refactored later.
 import express from 'express'
 import dotenv from 'dotenv'
 import products from './data/products.js'
