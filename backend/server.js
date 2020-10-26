@@ -1,6 +1,9 @@
 // this is the common js syntax, there is more updated ES6 module that will be refactored later.
 const express = require('express')
+const dotenv = require('dotenv')
 const products = require('./data/products')
+
+dotenv.config()
 
 const app = express()
 
@@ -20,5 +23,11 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product)
 })
 
-// create listen to the server
-app.listen(5000, console.log('Server running on port 5000'))
+// use port from .env file
+const PORT = process.env.PORT || 5000
+
+// listen to the server from the port in .env
+app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+)

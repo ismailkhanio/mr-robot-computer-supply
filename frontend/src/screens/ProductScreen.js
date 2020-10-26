@@ -18,6 +18,7 @@ const ProductScreen = ({ match }) => {
 
     fetchProduct()
   }, [match])
+  // adding match to [match] removes a dependency warning for useEffect Hook
 
   return (
     <>
