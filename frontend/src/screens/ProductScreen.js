@@ -17,9 +17,8 @@ const ProductScreen = ({ match }) => {
     }
 
     fetchProduct()
-  }, [])
+  }, [match])
 
-  
   return (
     <>
       {/* create a link button that takes us back from the product screen to the homescreen */}
@@ -77,7 +76,11 @@ const ProductScreen = ({ match }) => {
 
               {/* add to cart button */}
               <ListGroup.Item>
-                <Button className="btn-block" type='button' disabled={product.countInStock === 0}>
+                <Button
+                  className='btn-block'
+                  type='button'
+                  disabled={product.countInStock === 0}
+                >
                   Add to Cart
                 </Button>
               </ListGroup.Item>
