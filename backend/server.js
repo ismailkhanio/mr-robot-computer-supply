@@ -1,9 +1,16 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import connectDB from './config/db.js'
 import products from './data/products.js'
+import mongoose from 'mongoose'
 
+// run dotenv config method before initalizing server
 dotenv.config()
 
+// connect to mongoDB function
+connectDB()
+
+// namespace express server to app
 const app = express()
 
 // create get request to the server
