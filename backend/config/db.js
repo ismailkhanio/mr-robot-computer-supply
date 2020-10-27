@@ -11,10 +11,10 @@ const connectDB = async () => {
       useCreateIndex: true,
     })
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
   } catch (error) {
     // console error message
-    console.error(`Error: ${error.message}`)
+    console.error(`Error: ${error.message}`.red.bold)
     // exists the connect. (1) means it will exit with failure
     process.exit(1)
   }
