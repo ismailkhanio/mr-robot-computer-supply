@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
       // to ensure that multiple users aren't made with the same email address
-      unique: true
+      unique: true,
     },
     password: {
       type: String,

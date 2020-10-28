@@ -1,13 +1,16 @@
 import mongoose from 'mongoose'
 
-const reviewSchema = mongoose.Schema({
-  name: { type: String, required: true},
-  // this will be the average rating
-  rating: { type: Number, required: true },
-  comment: { type: String, required: true },
-}, {
-    timestamps = true
-})
+const reviewSchema = mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    // this will be the average rating
+    rating: { type: Number, required: true },
+    comment: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  }
+)
 
 const productSchema = mongoose.Schema(
   {
@@ -38,7 +41,7 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    // reviews stored in an array, has it's own schema 
+    // reviews stored in an array, has it's own schema
     reviews: [reviewSchema],
     rating: {
       type: Number,
