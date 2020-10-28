@@ -1,6 +1,7 @@
 // this is the db configuration file
 import mongoose from 'mongoose'
 
+
 const connectDB = async () => {
   try {
     // set const to await MongoDB promise connection, using the connection string saved in .env
