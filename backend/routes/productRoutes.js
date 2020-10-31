@@ -14,7 +14,6 @@ router.get(
   asyncHandler(async (req, res) => {
     // go into the Product model, find everything using an empty object {}. This returns a Promise (because all Mongoose methods return promises), thus use async/await syntax
     const products = await Product.find({})
-
     res.json(products)
   })
 )

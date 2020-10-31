@@ -2,13 +2,15 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
 import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
 
   // take state from productList
-  const productList = useSelector(state => state.productList)
+  const productList = useSelector((state) => state.productList)
   // pull out what is needed from state
   const { loading, error, products } = productList
 
@@ -21,9 +23,9 @@ const HomeScreen = () => {
     <>
       <h1>Latest Products</h1>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+          <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {/* map through all products into a list and display results  */}
